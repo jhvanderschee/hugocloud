@@ -1,3 +1,5 @@
+# Server installation
+
 Installation (on Debian 12)
 
 ### Passwordless SSH
