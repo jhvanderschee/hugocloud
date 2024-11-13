@@ -4,16 +4,14 @@ _(alpha version)_
 <!-- TOC depthFrom:2 -->
 - [1. Rationale](#1-rationale)
 - [2. Server Installation](#2-server-installation)
-- [3. Usage](#3-usage)
-    - [3.1. Sync content](#31-add-website)
-	  - [3.1.1 Pre processing](#311-pre-processing)
-    - [3.2. Process YAML](#32-process-yaml)
-	  - [3.2.1.  Process multilingual](#321-process-multilingual)
-	  - [3.2.2.  Change or update fields](#323-change-or-update-fields)
+    - [2.1. Add system packages](#21-add-system-packages)
+	  - [2.1.1 Security considerations](#211-security-considerations)
+	- [2.3. Add Website](#23-add-website)
+	  - [2.3.1 Content pre processing](#311-content-pre-processing)
 - [4. Apache-Web-server-config](#4-apache-web-server-config)
-- [5. Nginx-Web-server-config](#4-nginx-web-server-config)
-- [6. Milestones](#5-milestones)
-- [7. Resources](#6-resources)
+- [5. Nginx-Web-server-config](#5-nginx-web-server-config)
+- [5. Milestones](#5-milestones)
+- [6. Resources](#6-resources)
 
 
 <!-- /TOC -->
@@ -46,82 +44,44 @@ Dependencies  - list .deb packages required
 
 > TADA : list 
  
-## 3. Usage 
+### 2.1. Add systemd packages
 
 TADA
 
-### 3.1. Add website
+Performs a general basic OS install with the required tooling & relevant debian packages (SSH,git... ) as Hugcloud requirement:
+
+``` bash
+add-system-packages.sh
+```
+
+#### 2.1.1 Security considerations
+
+TADA
+
+fail2ban
+ufw / firewall
+
+### 2.2 Configure Web server
+
+TADA
+
+> NOTE see below ( 4. and 5. section )
+
+### 2.3. Add Website
 
 Performs a general basic import (copy)  and migration (YAML changes)  of the required:
 
 ``` bash
 add-website.sh
-```
 
-### 3.1.1. Posts Date processing 
+#### 2.3.1 Content pre processing
 
+TADA
 
-On blogposts, dates need the be processed (defined as front-matter field).
+see _Notes/content-import_ ...
 
-``` 
-let's run the posts-date-move2front-matter (existing Bash) script on the posts/ folder
-```
-
-> NOTE: see scripts-base/ folder
-
-
-### 3.2. Process YAML
- 
- Let's process the front-matter !
-
-#### 3.2.1. Process multilingual 
-
-There are different source/origin websites/content folders to import and process. Let's add a related 'tag': it will inform about the source/origin.
-
-[see  'Resources' section below](#6-resources)
-
-
-### My Multi Word Header
-
-#### 3.2.2 Change or update fields
-
-
-Last but not least, the front-matter ('F-M') needs other changes to be applied on the  YAML. The given sync. content command takes care of, when needed: 
-PHP YAML processing takes place.
-
- E.g. the following pseudo-code (the OPTION is specified parenthesis):
-
-```
-
-- > remove this F-M field 'f' ( -r )
-
-- > change this F-M field name  'f' ( -c )
-
-- > update  this F-M field 'y' value  ( -u )
-
-- > add this F-M field/value pair 'f' ( -a )
-
-- > (going further...) find a YAML nested pattern and operate upon
-
- it will be done by iterating in all files in the given folder (specified by a PATH )
-
-```
-
-> NOTE1 : under construction ^^ - see migrate-script.php file.
-
-
-## 4. Apache-htaccess
-
-TADA : the migration requires old URLs to be properly redirected
-
-``` apacheconf
-  let's use mod_rewrite Apache capabilities for ! ..
-```
-
-
-
-- [4. Apache-Web-server-config](#4-apache-web-server-config)
-- [5. Nginx-Web-server-config](#4-nginx-web-server-config)
+- [3. Apache-Web-server-config](#4-apache-web-server-config)
+- [4. Nginx-Web-server-config](#4-nginx-web-server-config)
 
 
 
