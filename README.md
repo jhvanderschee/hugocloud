@@ -73,6 +73,7 @@ Performs a general basic import (copy)  and migration (YAML changes)  of the req
 
 ``` bash
 add-website.sh
+```
 
 #### 2.3.1 Content pre processing
 
