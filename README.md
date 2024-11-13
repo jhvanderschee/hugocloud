@@ -3,7 +3,7 @@ _(alpha version)_
 
 <!-- TOC depthFrom:2 -->
 - [1. Rationale](#1-rationale)
-- [2. Installation](#2-installation)
+- [2. Server Installation](#2-server-installation)
 - [3. Usage](#3-usage)
     - [3.1. Sync content](#31-add-website)
 	  - [3.1.1 Pre processing](#311-pre-processing)
